@@ -1,9 +1,8 @@
-# vue-vite-app
+# academic-calendar
 Vue + Vite app template
 
 * Vue 3
 * Vite
-* TailwindCSS
 * Bootstrap 4
 
 ## Getting Started
@@ -15,8 +14,8 @@ Make sure you have [node.js](https://nodejs.org/en/) installed on your machine b
 Click the Use this template button and clone the repository.
 
 ```
-$ git clone <project-name>
-$ cd <project-name>
+$ git clone https://github.com/charlon/academic-calendar.git
+$ cd academic-calendar
 $ npm install
 
 ```
