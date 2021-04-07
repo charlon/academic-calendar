@@ -1,6 +1,7 @@
 <template>
 
-  <div>
+
+  <h1>This is Vue!</h1>
 
     <nav>
       <router-link to="/">Home</router-link> |
@@ -8,7 +9,7 @@
     </nav>
 
     <router-view />
-  </div>
+
 </template>
 
 <script>
