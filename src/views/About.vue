@@ -1,5 +1,5 @@
 <template>
-  <h1>About Page</h1>
+  <h2>About Page</h2>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quidem
     natus repudiandae iure repellat voluptatum voluptatibus. Rerum deserunt
