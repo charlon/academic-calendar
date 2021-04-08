@@ -1,12 +1,12 @@
 <template>
   <div style="outline: dashed 2px #ccc">
-    <h1>2020-2021 Academic Calendar</h1>
+    <h1>20xx-20xx Academic Calendar</h1>
 
     <h2>Contents</h2>
     <ul>
-      <li>Event Category 1</li>
-      <li>Event Category 2</li>
-      <li>Event Category 3</li>
+      <li>Event Category xx</li>
+      <li>Event Category xx</li>
+      <li>Event Category xx</li>
     </ul>
     <p>
       * See UW Online Learning for drop and refund information associated with
