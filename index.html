@@ -29,9 +29,16 @@
       src="https://www.washington.edu/wp-content/themes/uw-2014/js/site.dev.js"
     ></script>
     <!--script src="//uw.edu/assets/uw.js"></script-->
+    
+    <!-- Char: Add Bootstrap 4 as common base css framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+    <!-- Char: Apply UW custom theme (this is not ideal.. but whatever!) -->
     <link rel="stylesheet" href="//uw.edu/assets/uw.css" />
-    <link rel="stylesheet" href="//uw.edu/students/reg/uwheader/css/registrar.css" />
+    <link
+      rel="stylesheet"
+      href="//uw.edu/students/reg/uwheader/css/registrar.css"
+    />
 
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js" type="text/javascript"></script>
@@ -46,6 +53,13 @@
                 window.open(form.dest.options[myindex].value, target="_parent");
               }
       // - End of JavaScript - -->
+    </script>
+
+    <!-- Char: Remove table striping added by UW theme js -->
+    <script type="text/javaScript">
+      $(function() {
+        $('table').removeClass('table-striped').removeAttr( "border", 1 )
+      });
     </script>
   </head>
   <body>
