@@ -15,11 +15,6 @@
 
     <events-table />
 
-    <events-table />
-
-    <events-table />
-
-    <events-table />
   </div>
 
   <h2>Holidays and Observances</h2>
@@ -44,3 +39,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "bootstrap/dist/css/bootstrap.css";
+
+h1 { color: lime !important; }
+h2 { color: plum !important; }
+
+</style>
