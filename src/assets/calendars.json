@@ -1,0 +1,20 @@
+[
+  {
+    "years": "2020-2021",
+    "quarters": [
+      { "quarter": "Autumn", "year": 2020 },
+      { "quarter": "Winter", "year": 2021 },
+      { "quarter": "Spring", "year": 2021 },
+      { "quarter": "Summer", "year": 2021 }
+    ]
+  },
+  {
+    "years": "2021-2022",
+    "quarters": [
+      { "quarter": "Autumn", "year": 2021 },
+      { "quarter": "Winter", "year": 2022 },
+      { "quarter": "Spring", "year": 2022 },
+      { "quarter": "Summer", "year": 2022 }
+    ]
+  }
+]
