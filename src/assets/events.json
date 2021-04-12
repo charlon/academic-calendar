@@ -1,0 +1,40 @@
+// events
+{
+  "label": "Instruction Begins",
+  "category": ["Calendar Summary", "Dates of Instruction"],
+  "links": ["https://www.uw..edu", "https://www.uw..edu/students/"],
+  "quarters": [
+    {
+      "quarter": "Autumn",
+      "year": "2020",
+      "start_date": "Sep 30, 2020",
+      "end_date": "",
+      "note": ""
+    },
+    {
+      "quarter": "Winter",
+      "year": "2021",
+      "start_date": "Jan 4, 2021",
+      "end_date": "",
+      "note": ""
+    },
+    {
+      "quarter": "Spring",
+      "year": "2021",
+      "start_date": "Mar 29, 2021",
+      "end_date": "",
+      "note": ""
+    },
+    {
+      "quarter": "Summer",
+      "year": "2021",
+      "start_date": "",
+      "end_date": "",
+      "terms": [
+        { "term": "Full-term", "start_date": "Jun 21, 2021", "end_date": "" },
+        { "term": "A-term", "start_date": "Jun 21, 2021", "end_date": "" },
+        { "term": "B-term", "start_date": "Jul 22, 2021", "end_date": "" }
+      ]
+    }
+  ]
+}
