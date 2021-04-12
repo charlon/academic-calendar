@@ -1,0 +1,10 @@
+{
+  "accounts": [
+    { "name": "john", "pet": "cat" },
+    { "name": "bob", "pet": "dog" },
+    { "name": "moe", "pet": "mosquito" }
+  ]
+}
+
+// 2020-2021
+
