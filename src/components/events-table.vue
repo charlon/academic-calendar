@@ -1,24 +1,15 @@
 <template>
-  <ul>
-
-    <template v-for="q in myQuarters" v-bind:key="q.quarter">
-      <li>{{ q.quarter }} {{ q.year }}</li>
-    </template>
-    
-  </ul>
-
   <div class="">
     <table class="table table-bordered table-sm">
-
 
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead class="thead-light">
         <tr>
           <th rowspan="2" class="align-top"></th>
           <!-- loop through quarters -->
-          <template v-for="q in myQuarters" v-bind:key="q.quarter">
-            <th v-if="q.quarter == 'Summer'" colspan="3" class="align-top">{{ q.quarter }} {{ q.year }}</th>
-            <th v-else rowspan="2" class="align-top">{{ q.quarter }} {{ q.year }}</th>
+          <template v-for="quarter in quarters" v-bind:key="quarter.label">
+            <th v-if="quarter.label == 'Summer'" colspan="3" class="align-top text-danger">{{ quarter.label }} {{ quarter.year }}</th>
+            <th v-else rowspan="2" class="align-top text-danger">{{ quarter.label }} {{ quarter.year }}</th>
           </template>
         </tr>
         <tr class="small">
@@ -28,7 +19,7 @@
         </tr>
       </thead>
 
-      
+
 
       <tbody>
         <tr>
@@ -38,7 +29,7 @@
           <td id="spring" class="text-nowrap">Mar 29, 2021</td>
           <td id="full" class="text-nowrap">Jun 21, 2021</td>
           <td id="aterm" class="text-nowrap">Jun 21, 2021</td>
-          <td i="bterm" class="text-nowrap">Jul 22, 2021</td>
+          <td id="bterm" class="text-nowrap">Jul 22, 2021</td>
         </tr>
         <tr>
           <td class="">Last Day of Instruction</td>
@@ -47,7 +38,7 @@
           <td id="spring" class="text-nowrap">Jun 4, 2021</td>
           <td id="full" class="text-nowrap">Aug 20, 2021</td>
           <td id="aterm" class="text-nowrap">Jul 21, 2021</td>
-          <td i="bterm" class="text-nowrap">Aug 20, 2021</td>
+          <td id="bterm" class="text-nowrap">Aug 20, 2021</td>
         </tr>
         <tr>
           <td class="">Final Examination Week</td>
@@ -139,11 +130,11 @@ import Calendars from "../assets/calendars.json";
 export default {
   data() {
     return {
-      myQuarters: [
-        { quarter: "Autumn", year: 2020 },
-        { quarter: "Winter", year: 2021 },
-        { quarter: "Spring", year: 2021 },
-        { quarter: "Summer", year: 2021 },
+      quarters: [
+        { label: "Autumn", year: 2020 },
+        { label: "Winter", year: 2021 },
+        { label: "Spring", year: 2021 },
+        { label: "Summer", year: 2021 },
       ],
     };
   },

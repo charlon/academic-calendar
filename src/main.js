@@ -4,6 +4,6 @@ import router from './router'
 
 // bootstrap 4 (standalone)
 //import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
+//import "bootstrap";
 
 createApp(App).use(router).mount('#app')
