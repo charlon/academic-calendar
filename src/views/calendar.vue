@@ -1,20 +1,20 @@
 <template>
   <div style="outline: dashed 2px #ccc">
-    <h1>20xx-20xx Academic Calendar</h1>
+   
+    <h1 class="mb-4"><span class="text-danger">{{ calendar.years }}</span> Academic Calendar</h1>
 
     <h2>Contents</h2>
     <ul>
-      <li>Event Category 1</li>
-      <li>Event Category 2</li>
-      <li>Event Category xx</li>
+      <li v-for="category in categories" v-bind:key="category.category" class="text-danger">{{ category.category }}</li>
     </ul>
-    <p>
-      * See UW Online Learning for drop and refund information associated with
-      Online Learning courses offered by UW Professional & Continuing Education.
+
+    <p>See UW Online Learning for drop and refund information associated with
+      Online Learning courses offered by UW Professional &amp; Continuing Education.
     </p>
 
     <h2>Event Cateogry 1</h2>
     <p>This is a category note</p>
+    
     <events-table />
 
 
@@ -37,10 +37,26 @@
 </template>
 
 <script>
+import Calendars from "../assets/calendars.json";
 import EventsTable from "../components/events-table.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      calendar : { "years": "2020-2021" },
+      categories: [
+        { "category": "Calendar Summary"},
+        { "category": "Dates of Instruction"},
+        { "category": "University Holidays"},
+        { "category": "Application Deadlines"},
+        { "category": "Registration Deadlines"},
+        { "category": "Adding/Dropping Courses or Withdrawl"},
+        { "category": "Tuition/Fee Assessment"},
+        { "category": "Grade Deadlines"},
+      ]
+    }
+  },
   components: {
     "events-table": EventsTable,
   },
@@ -50,7 +66,15 @@ export default {
 <style lang="scss" scoped>
 @import "bootstrap/dist/css/bootstrap.css";
 
-h1 { color: lime !important; }
-h2 { color: plum !important; }
+// bootrap and uw.css overrides
+h1 {
+  font-size: 3.7rem; // 37px
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
 
 </style>
