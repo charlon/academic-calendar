@@ -1,6 +1,7 @@
 <template>
   <div class="blah">
     <table class="table table-bordered table-sm">
+      
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
