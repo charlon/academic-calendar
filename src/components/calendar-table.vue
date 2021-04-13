@@ -124,20 +124,12 @@
 </template>
 
 <script>
-import Calendars from "../assets/calendar.json";
+import Calendar from "../assets/calendar.json";
 
 export default {
   data() {
     return {
-      quarters: [
-        { label: "Autumn", year: 2020 },
-        { label: "Winter", year: 2021 },
-        { label: "Spring", year: 2021 },
-        { label: "Summer", term: "Full-term", year: 2021 },
-        { label: "Summer", term: "A-term", year: 2021 },
-        { label: "Summer", term: "B-term", year: 2021 },
-      ],
-    };
+      quarters: Calendar.quarters    };
   },
 };
 </script>

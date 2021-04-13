@@ -4,26 +4,13 @@
       <span class="text-danger">{{ years }}</span> Academic Calendar
     </h1>
 
-    <h2>Contents</h2>
-    <ul>
-      <li
-        v-for="category in categories"
-        v-bind:key="category.label"
-        class="text-danger"
-      >
-        {{ category.label }}
-      </li>
-    </ul>
-    <p>
-      See UW Online Learning for drop and refund information associated with
-      Online Learning courses offered by UW Professional &amp; Continuing
-      Education.
-    </p>
+    <calendar-contents />
 
+    <!-- build a table for every category -->
     <template v-for="category in categories" v-bind:key="category.label">
       <h2 class="mt-5 text-danger">{{ category.label }}</h2>
       <p v-if="category.note" class="text-danger">{{ category.note }}</p>
-      <calendar-category />
+      <calendar-table />
     </template>
   </div>
 
@@ -40,36 +27,22 @@
 </template>
 
 <script>
-import Calendars from "../assets/calendar.json";
-import CalendarCategory from "../components/calendar-category.vue";
+import Calendar from "../assets/calendar.json";
+import CalendarContents from "../components/calendar-contents.vue";
+import CalendarTable from "../components/calendar-table.vue";
 
 export default {
   name: "App",
   data() {
     return {
-      years: "2020-2021",
-      categories: [
-        { label: "Calendar Summary" },
-        { label: "Dates of Instruction" },
-        {
-          label: "University Holidays",
-          note:
-            "Classes are not in session on the following holidays. All offices and most University buildings are also closed.",
-        },
-        { label: "Application Deadlines" },
-        { label: "Registration Deadlines" },
-        { label: "Adding/Dropping Courses or Withdrawl" },
-        { label: "Tuition/Fee Assessment" },
-        {
-          label: "Grade Deadlines",
-          note:
-            "Autumn registration for students dropped Spring 2020 will be canceled on Aug 21, 2020.",
-        },
-      ],
+      years: Calendar.years,
+      categories: Calendar.categories
+      
     };
   },
   components: {
-    "calendar-category": CalendarCategory,
+    "calendar-contents": CalendarContents,
+    "calendar-table": CalendarTable,
   },
 };
 </script>
