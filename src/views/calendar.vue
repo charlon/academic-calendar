@@ -1,7 +1,7 @@
 <template>
   <div style="outline: dashed 2px #ccc">
     <h1 class="mb-4">
-      <span class="text-danger">{{ calendar.range }}</span> Academic Calendar
+      <span class="text-danger">{{ range }}</span> Academic Calendar
     </h1>
 
     <h2>Contents</h2>
@@ -40,14 +40,14 @@
 </template>
 
 <script>
-import Calendars from "../assets/calendars.json";
+import Calendars from "../assets/calendar.json";
 import CalendarCategory from "../components/calendar-category.vue";
 
 export default {
   name: "App",
   data() {
     return {
-      calendar: { range: "2020-2021" },
+      range: "2020-2021",
       categories: [
         { label: "Calendar Summary" },
         { label: "Dates of Instruction" },

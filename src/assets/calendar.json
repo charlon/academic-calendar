@@ -1,0 +1,76 @@
+{
+  "range": "2020-2021",
+  "categories": [
+    { "label": "Calendar Summary" },
+    { "label": "Dates of Instruction" },
+    {
+      "label": "University Holidays",
+      "note": "Classes are not in session on the following holidays. All offices and most University buildings are also closed."
+    },
+    { "label": "Application Deadlines" },
+    { "label": "Registration Deadlines" },
+    { "label": "Adding/Dropping Courses or Withdrawl" },
+    { "label": "Tuition/Fee Assessment" },
+    {
+      "label": "Grade Deadlines",
+      "note": "Autumn registration for students dropped Spring 2020 will be canceled on Aug 21, 2020."
+    }
+  ],
+  "quarters": [
+    { "label": "Autumn", "year": 2020 },
+    { "label": "Winter", "year": 2021 },
+    { "label": "Spring", "year": 2021 },
+    { "label": "Summer", "term": "Full-term", "year": 2021 },
+    { "label": "Summer", "term": "A-term", "year": 2021 },
+    { "label": "Summer", "term": "B-term", "year": 2021 }
+  ],
+  "events": [
+    {
+      "label": "Instruction Begins",
+      "category": ["Calendar Summary", "Dates of Instruction"],
+      "links": ["https://www.uw..edu", "https://www.uw..edu/students/"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "year": "2020",
+          "start_date": "Sep 30, 2020",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Winter",
+          "year": "2021",
+          "start_date": "Jan 4, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Spring",
+          "year": "2021",
+          "start_date": "Mar 29, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "year": "2021",
+          "start_date": "",
+          "end_date": "",
+          "terms": [
+            {
+              "term": "Full-term",
+              "start_date": "Jun 21, 2021",
+              "end_date": ""
+            },
+            {
+              "term": "A-term",
+              "start_date": "Jun 21, 2021",
+              "end_date": ""
+            },
+            { "term": "B-term", "start_date": "Jul 22, 2021", "end_date": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}

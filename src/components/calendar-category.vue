@@ -8,10 +8,10 @@
           <!-- loop through quarters -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
             <th class="align-top text-danger">
-              {{ quarter.label }} {{ quarter.year }}
-              <span v-if="quarter.label == 'Summer'" class="d-block small">{{
-                quarter.term
-              }}</span>
+              <span :class="quarter.term == 'A-term' || quarter.term == 'B-term' ? 'invisible' : ''">{{ quarter.label }} {{ quarter.year }}</span>
+              <span v-if="quarter.label == 'Summer'" class="d-block small">
+                {{ quarter.term }}
+              </span>
             </th>
           </template>
         </tr>
@@ -123,7 +123,7 @@
 </template>
 
 <script>
-import Calendars from "../assets/calendars.json";
+import Calendars from "../assets/calendar.json";
 
 export default {
   data() {
