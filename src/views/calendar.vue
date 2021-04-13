@@ -1,7 +1,7 @@
 <template>
   <div style="outline: dashed 2px #ccc">
     <h1 class="mb-4">
-      <span class="text-danger">{{ range }}</span> Academic Calendar
+      <span class="text-danger">{{ years }}</span> Academic Calendar
     </h1>
 
     <h2>Contents</h2>
@@ -47,7 +47,7 @@ export default {
   name: "App",
   data() {
     return {
-      range: "2020-2021",
+      years: "2020-2021",
       categories: [
         { label: "Calendar Summary" },
         { label: "Dates of Instruction" },
