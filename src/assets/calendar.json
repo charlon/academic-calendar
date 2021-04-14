@@ -151,6 +151,63 @@
       ]
     },
     {
+      "label": "Winter Break",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Quarter Breaks"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Dec 19, 2020",
+          "end_date": "Jan 3, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Spring Break",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Quarter Breaks"],
+      "quarters": [
+        {
+          "quarter": "Winter",
+          "start_date": "Mar 20, 2021",
+          "end_date": "Mar 28, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Seattle Campus",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Commencement"],
+      "quarters": [
+        {
+          "quarter": "Spring",
+          "start_date": "Jun 12, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Bothell Campus",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Commencement"],
+      "quarters": [
+        {
+          "quarter": "Spring",
+          "start_date": "Jun 13, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Tacoma Campus",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Commencement"],
+      "quarters": [
+        {
+          "quarter": "Spring",
+          "start_date": "Jun 11, 2021"
+        }
+      ]
+    },
+    {
       "label": "Veterans Day",
       "category": ["University Holidays"],
       "quarters": [

@@ -131,7 +131,7 @@ h2 {
 }
 
 .blah {
-  
+  td { font-size: 1.5rem !important; } 
 }
 </style>
   
