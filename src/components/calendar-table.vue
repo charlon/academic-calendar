@@ -21,7 +21,13 @@
 
       <!-- top level category -->
       <tbody>
-        <tr>
+        <tr v-for="(event, i) in filteredEvents" :key="i">
+          <td>{{ event.label }}</td>
+          <td v-for="(quarter, j) in quarters" :key="j" class="text-nowrap">
+            {{ eventForQuarter(event, quarter) ? eventForQuarter(event, quarter).start_date : "" }}
+          </td>
+        </tr>
+        <!-- tr>
           <td>Instruction begins</td>
           <td id="autumn" class="text-nowrap">Sep 30, 2020</td>
           <td id="winter" class="text-nowrap">Jan 4, 2021</td>
@@ -45,7 +51,7 @@
           <td id="winter" class="text-nowrap">Mar 13-19, 2021</td>
           <td id="spring" class="text-nowrap">Jun 7-11, 2021</td>
           <td id="full" colspan="3">Typically the last class day of class</td>
-        </tr>
+        </tr !-->
       </tbody>
 
       <!-- subcategory listing
@@ -116,7 +122,7 @@
           <td class="">Autumn Break</td>
           <td id="autumn" class="text-nowrap"></td>
           <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap">Jun 11, 2021</td>
+          <td id="spring" ceventForQuarterlass="text-nowrap">Jun 11, 2021</td>
           <td id="full" colspan="3" class="text-nowrap">Aug 21-Sep 28, 2021</td>
         </tr>
       </tbody> -->
@@ -128,20 +134,35 @@
 import Calendar from "../assets/calendar.json";
 
 export default {
+  props: {
+    category: {
+      type: String,
+      required: true,
+    }
+  },
   data() {
     return {
-      category: 'Dates of Instruction',
       quarters: Calendar.quarters,
     };
   },
   computed: {
     filteredEvents() {
-      return Calendar.events
+      // filter events by category
+      return Calendar.events.filter(f => f.category.includes(this.category));
     },
   },
+  methods: {
+    eventForQuarter(event, quarter) {
+      return event.quarters.find((qData) =>
+        // Checkes if the term is defined, if it is then check it it matches
+        (!quarter.term || qData.term === quarter.term) &&
+        // Checks if the quarter label matches
+        qData.quarter === quarter.label
+      );
+    }
+  }
 };
 </script>
-
 
 <style lang="scss" scoped>
 @import "bootstrap/dist/css/bootstrap.css";
