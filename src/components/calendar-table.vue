@@ -5,12 +5,17 @@
       <thead>
         <tr>
           <th class="align-top"></th>
-          <!-- loop through quarters -->
+          <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th class="align-top text-danger">
+            <th class="align-top text-secondary" style="width:150px;">
               <span
-                :class="quarter.term == 'A-term' || quarter.term == 'B-term' ? 'invisible' : ''"
-              >{{ quarter.label }} {{ quarter.year }}</span>
+                :class="
+                  quarter.term == 'A-term' || quarter.term == 'B-term'
+                    ? 'invisible'
+                    : ''
+                "
+                >{{ quarter.label }} {{ quarter.year }}</span
+              >
               <span v-if="quarter.label == 'Summer'" class="d-block small">
                 {{ quarter.term }}
               </span>
@@ -23,38 +28,36 @@
       <tbody>
         <tr v-for="(event, i) in filteredEvents" :key="i">
           <td>{{ event.label }}</td>
-          <td v-for="(quarter, j) in quarters" :key="j" class="text-nowrap">
-            {{ eventForQuarter(event, quarter) ? eventForQuarter(event, quarter).start_date : "" }}
+          <td v-for="(quarter, j) in quarters" :key="j" style="width:150px;">
+            {{
+              eventForQuarter(event, quarter)
+                ? eventForQuarter(event, quarter).start_date
+                : ""
+            }}
+            {{
+              eventForQuarter(event, quarter)
+                ? eventForQuarter(event, quarter).end_date
+                : ""
+            }}
+            {{
+              eventForQuarter(event, quarter)
+                ? eventForQuarter(event, quarter).note
+                : ""
+            }}
           </td>
         </tr>
-        <!-- tr>
-          <td>Instruction begins</td>
-          <td id="autumn" class="text-nowrap">Sep 30, 2020</td>
-          <td id="winter" class="text-nowrap">Jan 4, 2021</td>
-          <td id="spring" class="text-nowrap">Mar 29, 2021</td>
-          <td id="full" class="text-nowrap">Jun 21, 2021</td>
-          <td id="aterm" class="text-nowrap">Jun 21, 2021</td>
-          <td id="bterm" class="text-nowrap">Jul 22, 2021</td>
-        </tr>
-        <tr>
-          <td class="">Last Day of Instruction</td>
-          <td id="autumn" class="text-nowrap">Dec 11, 2020</td>
-          <td id="winter" class="text-nowrap">Mar 12, 2021</td>
-          <td id="spring" class="text-nowrap">Jun 4, 2021</td>
-          <td id="full" class="text-nowrap">Aug 20, 2021</td>
-          <td id="aterm" class="text-nowrap">Jul 21, 2021</td>
-          <td id="bterm" class="text-nowrap">Aug 20, 2021</td>
-        </tr>
+      </tbody>
+      <!--
         <tr>
           <td class="">Final Examination Week</td>
           <td id="autumn" class="text-nowrap">Dec 12-18, 2020</td>
           <td id="winter" class="text-nowrap">Mar 13-19, 2021</td>
           <td id="spring" class="text-nowrap">Jun 7-11, 2021</td>
           <td id="full" colspan="3">Typically the last class day of class</td>
-        </tr !-->
-      </tbody>
+        </tr> 
+        -->
 
-      <!-- subcategory listing
+      <!-- for each subcategory... create a new tbody --
       <tbody>
         <tr>
           <th colspan="7" class="border-0">Commencement (subcategory)</th>
@@ -68,62 +71,14 @@
           <td id="aterm" class="text-nowrap"></td>
           <td i="bterm" class="text-nowrap"></td>
         </tr>
-        <tr>
-          <td class="">Bothell Campus</td>
+         <tr>
+          <td style="width: 30%">Bothell Campus</td>
           <td id="autumn" class="text-nowrap"></td>
           <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap">Jun 13, 2021</td>
-          <td id="full" class="text-nowrap"></td>
-          <td id="aterm" class="text-nowrap"></td>
-          <td id="bterm" class="text-nowrap"></td>
-        </tr>
-        <tr>
-          <td class="">Tacoma Campus</td>
-          <td id="autumn" class="text-nowrap"></td>
-          <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap">Jun 11, 2021</td>
-          <td id="full" class="text-nowrap"></td>
-          <td id="aterm" class="text-nowrap"></td>
-          <td id="bterm" class="text-nowrap"></td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <th colspan="7" class="border-0">Quarter Breaks (subcategory)</th>
-        </tr>
-        <tr>
-          <td style="width: 30%">Winter Break</td>
-          <td id="autumn" class="text-nowrap">Dec 19, 2020-Jan 3, 2021</td>
-          <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap"></td>
+          <td id="spring" class="text-nowrap">Jun 12, 2021</td>
           <td id="full" class="text-nowrap"></td>
           <td id="aterm" class="text-nowrap"></td>
           <td i="bterm" class="text-nowrap"></td>
-        </tr>
-        <tr>
-          <td class="">Spring Break</td>
-          <td id="autumn" class="text-nowrap"></td>
-          <td id="winter" class="text-nowrap">Mar 20-28, 2021</td>
-          <td id="spring" class="text-nowrap"></td>
-          <td id="full" class="text-nowrap"></td>
-          <td id="aterm" class="text-nowrap"></td>
-          <td id="bterm" class="text-nowrap"></td>
-        </tr>
-        <tr>
-          <td class="">Summer Break</td>
-          <td id="autumn" class="text-nowrap"></td>
-          <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap">Jun 12-20, 2021</td>
-          <td id="full" class="text-nowrap"></td>
-          <td id="aterm" class="text-nowrap"></td>
-          <td id="bterm" class="text-nowrap"></td>
-        </tr>
-        <tr>
-          <td class="">Autumn Break</td>
-          <td id="autumn" class="text-nowrap"></td>
-          <td id="winter" class="text-nowrap"></td>
-          <td id="spring" ceventForQuarterlass="text-nowrap">Jun 11, 2021</td>
-          <td id="full" colspan="3" class="text-nowrap">Aug 21-Sep 28, 2021</td>
         </tr>
       </tbody> -->
     </table>
@@ -138,7 +93,7 @@ export default {
     category: {
       type: String,
       required: true,
-    }
+    },
   },
   data() {
     return {
@@ -148,19 +103,20 @@ export default {
   computed: {
     filteredEvents() {
       // filter events by category
-      return Calendar.events.filter(f => f.category.includes(this.category));
+      return Calendar.events.filter((f) => f.category.includes(this.category));
     },
   },
   methods: {
     eventForQuarter(event, quarter) {
-      return event.quarters.find((qData) =>
-        // Checkes if the term is defined, if it is then check it it matches
-        (!quarter.term || qData.term === quarter.term) &&
-        // Checks if the quarter label matches
-        qData.quarter === quarter.label
+      return event.quarters.find(
+        (qData) =>
+          // Checkes if the term is defined, if it is then check it it matches
+          (!quarter.term || qData.term === quarter.term) &&
+          // Checks if the quarter label matches
+          qData.quarter === quarter.label
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -175,10 +131,7 @@ h2 {
 }
 
 .blah {
-  tbody td:nth-of-type(even),
-  thead th:nth-of-type(even) {
-    background: #eee;
-  }
+  
 }
 </style>
   

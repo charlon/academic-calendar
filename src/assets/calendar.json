@@ -116,6 +116,171 @@
           "note": ""
         }
       ]
+    },
+    {
+      "label": "Final Examination Week",
+      "category": ["Calendar Summary", "Dates of Instruction"],
+      "links": ["https://www.uw..edu", "https://www.uw..edu/students/"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Dec 12, 2020",
+          "end_date": "Dec 18, 2020",
+          "note": ""
+        },
+        {
+          "quarter": "Winter",
+          "start_date": "Mar 13, 2021",
+          "end_date": "Mar 19, 2021",
+          "note": ""
+        },
+        {
+          "quarter": "Spring",
+          "start_date": "Jun 7, 2021",
+          "end_date": "Jun 11, 2021",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "Full-term",
+          "start_date": "",
+          "end_date": "",
+          "note": "Typically the last class day of class"
+        }
+  
+      ]
+    },
+    {
+      "label": "Veterans Day",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Nov 11, 2020"
+        }
+      ]
+    },
+    {
+      "label": "Thanksgiving",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Nov 16, 2020",
+          "end_date": "Nov 17, 2020"
+        }
+      ]
+    },
+    {
+      "label": "Christmas",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Dec 25, 2020"
+        }
+      ]
+    },
+    {
+      "label": "New Year's Day",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Winter",
+          "start_date": "Jan 1, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Martin Luther King Jr. Day",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Winter",
+          "start_date": "Jan 18, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Presidents' Day",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Winter",
+          "start_date": "Feb 15, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Memorial Day",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Spring",
+          "start_date": "May 31, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Independence Day",
+      "category": ["University Holidays"],
+      "quarters": [
+        {
+          "quarter": "Summer",
+          "term": "Full-term",
+          "start_date": "Jul 5, 2021"
+        },
+        {
+          "quarter": "Summer",
+          "term": "A-term",
+          "start_date": "Jul 5, 2021"
+        }
+      ]
+    },
+    {
+      "label": "W grade and week designation for dropped courses begins (week designation not included summer quarter)",
+      "category": ["Grade Deadlines"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Oct 14, 2020",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Winter",
+          "start_date": "Jan 18, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Spring",
+          "start_date": "Apr 12, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "Full-term",
+          "start_date": "Jul 5, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "A-term",
+          "start_date": "Jun 28, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "B-term",
+          "start_date": "Jul 28, 2021",
+          "end_date": "",
+          "note": ""
+        }
+      ]
     }
   ]
 }
