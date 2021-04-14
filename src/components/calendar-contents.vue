@@ -4,7 +4,6 @@
       <li
         v-for="category in categories"
         v-bind:key="category.label"
-        class="text-danger"
       >
         {{ category.label }}
       </li>

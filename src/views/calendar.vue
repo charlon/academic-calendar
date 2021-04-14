@@ -1,17 +1,18 @@
 <template>
   <div style="outline: dashed 2px #ccc">
     <h1 class="mb-4">
-      <span class="text-danger">{{ years }}</span> Academic Calendar
+      <span class="">{{ years }}</span> Academic Calendar
     </h1>
 
     <calendar-contents />
 
     <!-- build a table for every category -->
     <template v-for="category in categories" v-bind:key="category.label">
-      <h2 class="mt-5 text-danger">{{ category.label }}</h2>
-      <p v-if="category.note" class="text-danger">{{ category.note }}</p>
+      <h2 class="mt-5">{{ category.label }}</h2>
+      <p v-if="category.note" class="">{{ category.note }}</p>
       <calendar-table :category="category.label" />
     </template>
+
   </div>
 
   <h2 class="mt-5">Holidays and Observances</h2>
@@ -25,12 +26,6 @@
     >
   </p>
 
-  <ul>
-    <li v-for="event in filteredEvents" :key="event.label">{{ event.label }}  
-      <span v-for="(quarter,i) in event.quarters" :key="i" class="ml-5">{{ quarter.start_date }}</span>
-    </li>
-  </ul>
-
 </template>
 
 <script>
@@ -42,7 +37,7 @@ export default {
   name: "App",
   data() {
     return {
-      years: Calendar.years,
+      years: Calendar.start_year + "-" + (Calendar.start_year + 1),
       categories: Calendar.categories,
 
       // TODO: filter events by category
@@ -51,10 +46,7 @@ export default {
     };
   },
   computed: {
-    filteredEvents() {
-      // filter events by category
-      return Calendar.events.filter(f => f.category.indexOf('Calendar Summary') > -1);
-    },
+
   },
   components: {
     "calendar-contents": CalendarContents,
