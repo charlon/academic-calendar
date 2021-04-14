@@ -2,7 +2,6 @@
   "start_year": 2020,
   "years": "2020-2021",
   "categories": [
-    { "label": "Calendar Summary" },
     { "label": "Dates of Instruction" },
     {
       "label": "University Holidays",
@@ -28,7 +27,7 @@
   "events": [
     {
       "label": "Instruction Begins",
-      "category": ["Calendar Summary", "Dates of Instruction"],
+      "category": ["Dates of Instruction"],
       "links": ["https://www.uw..edu", "https://www.uw..edu/students/"],
       "quarters": [
         {
@@ -119,7 +118,7 @@
     },
     {
       "label": "Final Examination Week",
-      "category": ["Calendar Summary", "Dates of Instruction"],
+      "category": ["Dates of Instruction"],
       "links": ["https://www.uw..edu", "https://www.uw..edu/students/"],
       "quarters": [
         {
@@ -171,6 +170,31 @@
           "quarter": "Winter",
           "start_date": "Mar 20, 2021",
           "end_date": "Mar 28, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Summer Break",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Quarter Breaks"],
+      "quarters": [
+        {
+          "quarter": "Spring",
+          "start_date": "Jun 12, 2021",
+          "end_date": "Jun 20, 2021"
+        }
+      ]
+    },
+    {
+      "label": "Autumn Break",
+      "category": ["Dates of Instruction"],
+      "subcategory": ["Quarter Breaks"],
+      "quarters": [
+        {
+          "quarter": "Summer",
+          "term": "Full-term",
+          "start_date": "Aug 21, 2021",
+          "end_date": "Sep 28, 2021"
         }
       ]
     },
@@ -282,11 +306,6 @@
       "label": "Independence Day",
       "category": ["University Holidays"],
       "quarters": [
-        {
-          "quarter": "Summer",
-          "term": "Full-term",
-          "start_date": "Jul 5, 2021"
-        },
         {
           "quarter": "Summer",
           "term": "A-term",

@@ -58,6 +58,7 @@ export default {
 <style lang="scss" scoped>
 @import "bootstrap/dist/css/bootstrap.css";
 
+/*
 h1 {
   font-size: 3.7rem; // 37px
   font-weight: bold;
@@ -66,5 +67,5 @@ h1 {
 h2 {
   font-size: 2.8rem;
   font-weight: bold;
-}
+}*/
 </style>
