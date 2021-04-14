@@ -32,11 +32,11 @@ export default {
 @import "bootstrap/dist/css/bootstrap.css";
 
 // bootrap and uw.css overrides
-
+/*
 h2 {
   font-size: 2.8rem;
   font-weight: bold;
-}
+}*///
 
 </style>
   
