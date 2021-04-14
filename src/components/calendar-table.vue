@@ -1,7 +1,6 @@
 <template>
   <div class="blah">
     <table class="table table-bordered table-sm">
-      
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
@@ -9,7 +8,9 @@
           <!-- loop through quarters -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
             <th class="align-top text-danger">
-              <span :class="quarter.term == 'A-term' || quarter.term == 'B-term' ? 'invisible' : ''">{{ quarter.label }} {{ quarter.year }}</span>
+              <span
+                :class="quarter.term == 'A-term' || quarter.term == 'B-term' ? 'invisible' : ''"
+              >{{ quarter.label }} {{ quarter.year }}</span>
               <span v-if="quarter.label == 'Summer'" class="d-block small">
                 {{ quarter.term }}
               </span>
@@ -47,7 +48,7 @@
         </tr>
       </tbody>
 
-      <!-- subcategory listing -->
+      <!-- subcategory listing
       <tbody>
         <tr>
           <th colspan="7" class="border-0">Commencement (subcategory)</th>
@@ -118,7 +119,7 @@
           <td id="spring" class="text-nowrap">Jun 11, 2021</td>
           <td id="full" colspan="3" class="text-nowrap">Aug 21-Sep 28, 2021</td>
         </tr>
-      </tbody>
+      </tbody> -->
     </table>
   </div>
 </template>
@@ -129,7 +130,14 @@ import Calendar from "../assets/calendar.json";
 export default {
   data() {
     return {
-      quarters: Calendar.quarters    };
+      category: 'Dates of Instruction',
+      quarters: Calendar.quarters,
+    };
+  },
+  computed: {
+    filteredEvents() {
+      return Calendar.events
+    },
   },
 };
 </script>
