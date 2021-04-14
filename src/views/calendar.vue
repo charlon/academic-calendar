@@ -24,6 +24,13 @@
       >Holiday and Observance Calendar</a
     >
   </p>
+
+  <ul>
+    <li v-for="event in filteredEvents" :key="event.label">{{ event.label }}  
+      <span v-for="(quarter,i) in event.quarters" :key="i" class="ml-5">{{ quarter.start_date }}</span>
+    </li>
+  </ul>
+
 </template>
 
 <script>
@@ -36,9 +43,18 @@ export default {
   data() {
     return {
       years: Calendar.years,
-      categories: Calendar.categories
-      
+      categories: Calendar.categories,
+
+      // TODO: filter events by category
+      //events: Calendar.events.filter()
+
     };
+  },
+  computed: {
+    filteredEvents() {
+      // filter events by category
+      return Calendar.events.filter(f => f.category.indexOf('Calendar Summary') > -1);
+    },
   },
   components: {
     "calendar-contents": CalendarContents,

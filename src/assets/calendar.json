@@ -1,4 +1,5 @@
 {
+  "start_year": 2020,
   "years": "2020-2021",
   "categories": [
     { "label": "Calendar Summary" },
@@ -32,43 +33,87 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "year": "2020",
           "start_date": "Sep 30, 2020",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Winter",
-          "year": "2021",
           "start_date": "Jan 4, 2021",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Spring",
-          "year": "2021",
           "start_date": "Mar 29, 2021",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
-          "year": "2021",
-          "start_date": "",
+          "term": "Full-term",
+          "start_date": "Mar 29, 2021",
           "end_date": "",
-          "terms": [
-            {
-              "term": "Full-term",
-              "start_date": "Jun 21, 2021",
-              "end_date": ""
-            },
-            {
-              "term": "A-term",
-              "start_date": "Jun 21, 2021",
-              "end_date": ""
-            },
-            { "term": "B-term", "start_date": "Jul 22, 2021", "end_date": "" }
-          ]
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "A-term",
+          "start_date": "Mar 29, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "B-term",
+          "start_date": "Mar 29, 2021",
+          "end_date": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "label": "Last Day of Instruction",
+      "category": ["Dates of Instruction"],
+      "quarters": [
+        {
+          "quarter": "Autumn",
+          "start_date": "Dec 11, 2020",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Winter",
+          "start_date": "Mar 12, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Spring",
+          "start_date": "Jun 4, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "Full-term",
+          "start_date": "Mar 29, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "A-term",
+          "start_date": "Mar 29, 2021",
+          "end_date": "",
+          "note": ""
+        },
+        {
+          "quarter": "Summer",
+          "term": "B-term",
+          "start_date": "Mar 29, 2021",
+          "end_date": "",
+          "note": ""
         }
       ]
     }
