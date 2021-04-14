@@ -10,7 +10,7 @@
     <template v-for="category in categories" v-bind:key="category.label">
       <h2 class="mt-5 text-danger">{{ category.label }}</h2>
       <p v-if="category.note" class="text-danger">{{ category.note }}</p>
-      <calendar-table />
+      <calendar-table :category="category.label" />
     </template>
   </div>
 
