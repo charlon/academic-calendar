@@ -7,43 +7,39 @@
           <th class="align-top"></th>
           <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th class="align-top text-secondary" style="width:150px;">
-              <span
-                :class="
-                  quarter.term == 'A-term' || quarter.term == 'B-term'
-                    ? 'invisible'
-                    : ''
-                "
-                >{{ quarter.label }} {{ quarter.year }}</span
-              >
-              <span v-if="quarter.label == 'Summer'" class="d-block small">
-                {{ quarter.term }}
-              </span>
+            <th v-if="!quarter.terms" class="align-top text-secondary" style="width:150px;">
+              {{ quarter.label }} {{ quarter.year }}
             </th>
+            <template v-else>
+              <th
+                v-for="(term, i) in quarter.terms"
+                :key="i"
+                class="align-top text-secondary" style="width:150px;"
+              >
+                <span
+                  :class="{ invisible: term !== quarter.full_term }"
+                  >{{ quarter.label }} {{ quarter.year }}</span
+                >
+                <span class="d-block small">
+                  {{ term }}
+                </span>
+              </th>
+            </template>
           </template>
         </tr>
       </thead>
 
       <!-- top level category -->
       <tbody>
-        <tr v-for="(event, i) in filteredEvents" :key="i">
-          <td>{{ event.label }}</td>
-          <td v-for="(quarter, j) in quarters" :key="j" style="width:150px;">
-            {{
-              eventForQuarter(event, quarter)
-                ? eventForQuarter(event, quarter).start_date
-                : ""
-            }}
-            {{
-              eventForQuarter(event, quarter)
-                ? eventForQuarter(event, quarter).end_date
-                : ""
-            }}
-            {{
-              eventForQuarter(event, quarter)
-                ? eventForQuarter(event, quarter).note
-                : ""
-            }}
+        <tr v-for="(eventData, i) in tabulatedEventDates" :key="i">
+          <td>{{ eventData.label }}</td>
+          <td
+            v-for="(cell, j) in eventData.cells"
+            :key="j"
+            style="width:150px;"
+            :colspan="cell.colspan"
+          >
+            {{ cell.label }}
           </td>
         </tr>
       </tbody>
@@ -105,16 +101,75 @@ export default {
       // filter events by category
       return Calendar.events.filter((f) => f.category.includes(this.category));
     },
+    tabulatedEventDates() {
+      let events = [];
+
+      this.filteredEvents.forEach((event) => {
+        let eventData = {
+          label: event.label,
+          cells: [],
+        };
+        this.quarters.forEach((quarter) => {
+          if (!quarter.terms) {
+            // If the quarter does not have terms
+            let selectedQuarterData = event.quarters
+                .find((eData) => eData.quarter === quarter.label);
+
+            // push one cell spanning the quarter
+            eventData.cells.push({
+              label: this.eventDataFormatter(selectedQuarterData),
+              colspan: 1,
+            });
+          } else {
+            let labelForTerm = {};
+            // Tries to create a label for each term
+            event.quarters
+                .filter((eData) => eData.quarter === quarter.label)
+                .forEach((eData) => {
+                  labelForTerm[eData.term] = this.eventDataFormatter(eData);
+                });
+            
+            let onlyFullTermHasLabel = quarter.terms
+              // Check every term to not have a label or be the full term
+              .every((term) => !labelForTerm[term] || term === quarter.full_term);
+            if (labelForTerm[quarter.full_term] && onlyFullTermHasLabel) {
+              // Pushes a single cell spanning the whole quarter if only the
+              // 'full_term' term has a label
+              eventData.cells.push({
+                label: labelForTerm[quarter.full_term],
+                colspan: quarter.terms.length,
+              });
+            } else {
+              // Otherwise push a cell for each term spanning only that term
+              quarter.terms.forEach((term) => {
+                eventData.cells.push({
+                  label: labelForTerm[term],
+                  colspan: 1,
+                });
+              });
+            }
+          }
+        });
+        events.push(eventData);
+      });
+
+      return events;
+    }
   },
   methods: {
-    eventForQuarter(event, quarter) {
-      return event.quarters.find(
-        (qData) =>
-          // Checkes if the term is defined, if it is then check it it matches
-          (!quarter.term || qData.term === quarter.term) &&
-          // Checks if the quarter label matches
-          qData.quarter === quarter.label
-      );
+    eventDataFormatter(eventData) {
+      if (!eventData) return '';
+      let fmt = '';
+      if (eventData.start_date) {
+        fmt = eventData.start_date;
+      }
+      if (eventData.end_date) {
+        fmt += ` - ${eventData.end_date}`;
+      }
+      if (eventData.note) {
+        fmt = eventData.note;
+      }
+      return fmt;
     },
   },
 };

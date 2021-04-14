@@ -20,9 +20,12 @@
     { "label": "Autumn", "year": 2020 },
     { "label": "Winter", "year": 2021 },
     { "label": "Spring", "year": 2021 },
-    { "label": "Summer", "term": "Full-term", "year": 2021 },
-    { "label": "Summer", "term": "A-term", "year": 2021 },
-    { "label": "Summer", "term": "B-term", "year": 2021 }
+    {
+      "label": "Summer",
+      "terms": ["Full-term", "A-term", "B-term"],
+      "full_term": "Full-term",
+      "year": 2021
+    }
   ],
   "events": [
     {
