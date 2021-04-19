@@ -1,6 +1,6 @@
 <template>
   <div class="blah">
-    <table class="table table-bordered table-sm">
+    <table class="table table-bordered table-hover table-sm">
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
@@ -185,8 +185,5 @@ h2 {
   font-weight: bold;
 }*/
 
-.blah {
-  td { font-size: 1.5rem !important; } 
-}
 </style>
   
