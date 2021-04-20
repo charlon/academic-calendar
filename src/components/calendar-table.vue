@@ -7,14 +7,14 @@
           <th class="align-top"></th>
           <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th v-if="!quarter.terms" class="align-top text-secondary" style="width:150px;">
+            <th v-if="!quarter.terms" class="align-top text-secondary table-header" style="width:150px;">
               {{ quarter.label }} {{ quarter.year }}
             </th>
             <template v-else>
               <th
                 v-for="(term, i) in quarter.terms"
                 :key="i"
-                class="align-top text-secondary" style="width:150px;"
+                class="align-top text-secondary table-header" style="width:150px;"
               >
                 <span
                   :class="{ invisible: term !== quarter.full_term }"
@@ -38,6 +38,7 @@
             :key="j"
             style="width:150px;"
             :colspan="cell.colspan"
+            class="table-quarter"
           >
             {{ cell.label }}
           </td>
@@ -184,6 +185,10 @@ h2 {
   font-size: 2.8rem;
   font-weight: bold;
 }*/
+
+.table-column-hover {
+  background-color: #f5f5f5;
+}
 
 </style>
   
