@@ -1,23 +1,22 @@
 <template>
   <div class="blah">
-    <table class="table table-hover table-sm">
+    <table class="table table-sm">
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
-          <th class="align-top" style="min-width:200px;"></th>
+          <th class="align-top table-event"></th>
           <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th v-if="!quarter.terms" class="align-top table-header" style="width:150px;">
+            <th v-if="!quarter.terms" class="align-top table-header">
               {{ quarter.label }} {{ quarter.year }}
             </th>
             <template v-else>
               <th
                 v-for="(term, i) in quarter.terms"
                 :key="i"
-                class="align-top table-header" style="width:150px;"
+                class="align-top table-header"
               >
-                <span
-                  :class="{ invisible: term !== quarter.full_term }"
+                <span :class="{ invisible: term !== quarter.full_term }"
                   >{{ quarter.label }} {{ quarter.year }}</span
                 >
                 <span class="d-block small">
@@ -31,12 +30,16 @@
 
       <!-- top level category -->
       <tbody>
-        <tr v-for="(eventData, i) in tabulatedEventDates" :key="i">
-          <td style="min-width:200px;">{{ eventData.label }}</td>
+        <tr
+          v-for="(eventData, i) in tabulatedEventDates"
+          :key="i"
+          class="table-row"
+        >
+          <td class="table-event">{{ eventData.label }}</td>
           <td
             v-for="(cell, j) in eventData.cells"
             :key="j"
-            style="width:150px;"
+            style="width: 150px"
             :colspan="cell.colspan"
             class="table-quarter"
           >
@@ -113,8 +116,9 @@ export default {
         this.quarters.forEach((quarter) => {
           if (!quarter.terms) {
             // If the quarter does not have terms
-            let selectedQuarterData = event.quarters
-                .find((eData) => eData.quarter === quarter.label);
+            let selectedQuarterData = event.quarters.find(
+              (eData) => eData.quarter === quarter.label
+            );
 
             // push one cell spanning the quarter
             eventData.cells.push({
@@ -125,14 +129,16 @@ export default {
             let labelForTerm = {};
             // Tries to create a label for each term
             event.quarters
-                .filter((eData) => eData.quarter === quarter.label)
-                .forEach((eData) => {
-                  labelForTerm[eData.term] = this.eventDataFormatter(eData);
-                });
-            
+              .filter((eData) => eData.quarter === quarter.label)
+              .forEach((eData) => {
+                labelForTerm[eData.term] = this.eventDataFormatter(eData);
+              });
+
             let onlyFullTermHasLabel = quarter.terms
               // Check every term to not have a label or be the full term
-              .every((term) => !labelForTerm[term] || term === quarter.full_term);
+              .every(
+                (term) => !labelForTerm[term] || term === quarter.full_term
+              );
             if (labelForTerm[quarter.full_term] && onlyFullTermHasLabel) {
               // Pushes a single cell spanning the whole quarter if only the
               // 'full_term' term has a label
@@ -155,12 +161,12 @@ export default {
       });
 
       return events;
-    }
+    },
   },
   methods: {
     eventDataFormatter(eventData) {
-      if (!eventData) return '';
-      let fmt = '';
+      if (!eventData) return "";
+      let fmt = "";
       if (eventData.start_date) {
         fmt = eventData.start_date;
       }
@@ -186,17 +192,33 @@ h2 {
   font-weight: bold;
 }*/
 
-.table-header, .table-quarter {
-  //border-left: 1px solid #ddd;
-  //border-right: 1px solid #ddd;
+.table {
+  border: none;
 }
 
-.table { border: none; }
+.table-event {
+  //border-right: 2px solid rgb(222, 226, 230);
+  min-width: 200px;
+  font-size: 1.6rem;
+}
 
-.table-column-hover {
-  border-collapse: unset;
+.table-header,
+.table-quarter {
+  width: 150px;
+  width: 150px;
+  font-size: 1.5rem;
+}
+.table-quarter {
+  color: #666;
+}
+
+.table-hover {
   background-color: #f5f5f5;
-}
+  color: #000 !important;
 
+  .table-quarter {
+    color: #000;
+  }
+}
 </style>
   
