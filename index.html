@@ -49,11 +49,9 @@
         $("th.table-header, td.table-quarter").hover(function() {
           var index = $(this).index();
           $("th.table-header, td.table-quarter").filter(":nth-child(" + (index+1) + ")").addClass("table-column-hover");
-          //$("th.table-header").filter(":nth-child(" + (index+1) + ")").css("background-color","#ddd")
         }, function() {
           var index = $(this).index();
           $("th.table-header, td.table-quarter").removeClass("table-column-hover");
-          //$("th.table-header").filter(":nth-child(" + (index+1) + ")").css("background-color","#fff")
         });
 
       });
