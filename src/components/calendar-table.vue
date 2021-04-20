@@ -1,6 +1,6 @@
 <template>
   <div class="blah">
-    <table class="table table-sm">
+    <table class="table table-bordered table-sm">
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
@@ -43,44 +43,38 @@
             :colspan="cell.colspan"
             class="table-quarter"
           >
-            {{ cell.label }}
+            <span class="d-inline-block">{{ cell.label }}</span>
           </td>
         </tr>
       </tbody>
-      <!--
-        <tr>
-          <td class="">Final Examination Week</td>
-          <td id="autumn" class="text-nowrap">Dec 12-18, 2020</td>
-          <td id="winter" class="text-nowrap">Mar 13-19, 2021</td>
-          <td id="spring" class="text-nowrap">Jun 7-11, 2021</td>
-          <td id="full" colspan="3">Typically the last class day of class</td>
-        </tr> 
-        -->
 
-      <!-- for each subcategory... create a new tbody --
+      <!-- for each subcategory... create a new tbody -->
       <tbody>
         <tr>
-          <th colspan="7" class="border-0">Commencement (subcategory)</th>
+          <th colspan="7" style="font-size:1.6rem;">Subcategory</th>
         </tr>
-        <tr>
-          <td style="width: 30%">Seattle Campus</td>
-          <td id="autumn" class="text-nowrap"></td>
-          <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap">Jun 12, 2021</td>
-          <td id="full" class="text-nowrap"></td>
-          <td id="aterm" class="text-nowrap"></td>
-          <td i="bterm" class="text-nowrap"></td>
+        <tr class="table-row">
+          <td class="table-event">Event name</td>
+          <td id="autumn" class="table-quarter"></td>
+          <td id="winter" class="table-quarter"></td>
+          <td id="spring" class="table-quarter">Jun 12, 2021</td>
+          <td id="full" class="table-quarter"></td>
+          <td id="aterm" class="table-quarter"></td>
+          <td i="bterm" class="table-quarter"></td>
         </tr>
-         <tr>
-          <td style="width: 30%">Bothell Campus</td>
-          <td id="autumn" class="text-nowrap"></td>
-          <td id="winter" class="text-nowrap"></td>
-          <td id="spring" class="text-nowrap">Jun 12, 2021</td>
-          <td id="full" class="text-nowrap"></td>
-          <td id="aterm" class="text-nowrap"></td>
-          <td i="bterm" class="text-nowrap"></td>
+         <tr class="table-row">
+          <td class="table-event">Really long event name</td>
+          <td id="autumn" class="table-quarter"></td>
+          <td id="winter" class="table-quarter"></td>
+          <td id="spring" class="table-quarter">
+            <span class="d-inline-block">Jun 12, 2021</span> - <span class="d-inline-block">Aug 8, 2021</span>
+          </td>
+          <td id="full" class="table-quarter"></td>
+          <td id="aterm" class="table-quarter"></td>
+          <td i="bterm" class="table-quarter"></td>
         </tr>
-      </tbody> -->
+      </tbody>
+      
     </table>
   </div>
 </template>
@@ -193,7 +187,7 @@ h2 {
 }*/
 
 .table {
-  border: none;
+  //border: none;
 }
 
 .table-event {

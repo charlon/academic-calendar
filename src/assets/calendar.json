@@ -148,6 +148,20 @@
           "start_date": "",
           "end_date": "",
           "note": "Typically the last class day of class"
+        },
+        {
+          "quarter": "Summer",
+          "term": "A-term",
+          "start_date": "",
+          "end_date": "",
+          "note": "Typically the last class day of class"
+        },
+        {
+          "quarter": "Summer",
+          "term": "B-term",
+          "start_date": "",
+          "end_date": "",
+          "note": "Typically the last class day of class"
         }
   
       ]
@@ -196,6 +210,18 @@
         {
           "quarter": "Summer",
           "term": "Full-term",
+          "start_date": "Aug 21, 2021",
+          "end_date": "Sep 28, 2021"
+        },
+        {
+          "quarter": "Summer",
+          "term": "A-term",
+          "start_date": "Aug 21, 2021",
+          "end_date": "Sep 28, 2021"
+        },
+        {
+          "quarter": "Summer",
+          "term": "B-term",
           "start_date": "Aug 21, 2021",
           "end_date": "Sep 28, 2021"
         }
@@ -309,6 +335,11 @@
       "label": "Independence Day",
       "category": ["University Holidays"],
       "quarters": [
+        {
+          "quarter": "Summer",
+          "term": "Full-term",
+          "start_date": "Jul 5, 2021"
+        },
         {
           "quarter": "Summer",
           "term": "A-term",
