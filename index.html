@@ -44,14 +44,21 @@
 
         // remove default uw.css table striping
         $('table').removeClass('table-striped').removeAttr( "border", 1);
+        
+        // add row hover
+        $('tr.table-row').hover(function() {             
+          $(this).addClass('table-hover');
+        }, function() {
+          $(this).removeClass('table-hover');
+        });
 
         // add column hover functionality
         $("th.table-header, td.table-quarter").hover(function() {
           var index = $(this).index();
-          $("th.table-header, td.table-quarter").filter(":nth-child(" + (index+1) + ")").addClass("table-column-hover");
+          $("th.table-header, td.table-quarter").filter(":nth-child(" + (index+1) + ")").addClass("table-hover text-body");
         }, function() {
           var index = $(this).index();
-          $("th.table-header, td.table-quarter").removeClass("table-column-hover");
+          $("th.table-header, td.table-quarter").removeClass("table-hover text-body");
         });
 
       });

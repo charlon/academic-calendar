@@ -1,6 +1,6 @@
 <template>
-  <div style="outline: dashed 2px #ccc">
-    <h1 class="mb-4">
+  <div>
+    <h1 class="mb-4 font-weight-bold">
       <span class="">{{ years }}</span> Academic Calendar
     </h1>
 
@@ -8,14 +8,14 @@
 
     <!-- build a table for every category -->
     <template v-for="category in categories" v-bind:key="category.label">
-      <h2 class="mt-5">{{ category.label }}</h2>
+      <h2 class="mt-5 font-weight-bold">{{ category.label }}</h2>
       <p v-if="category.note" class="">{{ category.note }}</p>
       <calendar-table :category="category.label" />
     </template>
 
   </div>
 
-  <h2 class="mt-5">Holidays and Observances</h2>
+  <h2 class="mt-5 font-weight-bold">Holidays and Observances</h2>
   <p>
     For Washington’s holiday and observance calendar, please review the
     Washington State Council of Presidents
@@ -59,7 +59,7 @@ export default {
 @import "bootstrap/dist/css/bootstrap.css";
 
 // bootrap and uw.css overrides
-
+/*
 h1 {
   font-size: 3.7rem; // 37px
   font-weight: 800;
@@ -68,6 +68,6 @@ h1 {
 h2 {
   font-size: 2.8rem;
   font-weight: 800;
-}
+}*/
 
 </style>

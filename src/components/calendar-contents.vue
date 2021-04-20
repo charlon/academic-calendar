@@ -1,5 +1,5 @@
 <template>
-  <h2>Contents</h2>
+  <h2 class="font-weight-bold">Contents</h2>
     <ul>
       <li
         v-for="category in categories"
@@ -33,10 +33,11 @@ export default {
 
 // bootrap and uw.css overrides
 
+/*
 h2 {
   font-size: 2.8rem;
   font-weight: 800;
-}
+}*/
 
 </style>
   
