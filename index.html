@@ -41,7 +41,21 @@
   <!-- Char: Remove table striping added by UW theme js -->
   <script type="text/javaScript">
       $(function() {
-        $('table').removeClass('table-striped').removeAttr( "border", 1 )
+
+        // remove default uw.css table striping
+        $('table').removeClass('table-striped').removeAttr( "border", 1);
+
+        // add column hover functionality
+        $("th.table-header, td.table-quarter").hover(function() {
+          var index = $(this).index();
+          $("th.table-header, td.table-quarter").filter(":nth-child(" + (index+1) + ")").addClass("table-column-hover");
+          //$("th.table-header").filter(":nth-child(" + (index+1) + ")").css("background-color","#ddd")
+        }, function() {
+          var index = $(this).index();
+          $("th.table-header, td.table-quarter").removeClass("table-column-hover");
+          //$("th.table-header").filter(":nth-child(" + (index+1) + ")").css("background-color","#fff")
+        });
+
       });
     </script>
 </head>
