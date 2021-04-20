@@ -1,20 +1,20 @@
 <template>
   <div class="blah">
-    <table class="table table-bordered table-hover table-sm">
+    <table class="table table-hover table-sm">
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
-          <th class="align-top"></th>
+          <th class="align-top" style="min-width:200px;"></th>
           <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th v-if="!quarter.terms" class="align-top text-secondary table-header" style="width:150px;">
+            <th v-if="!quarter.terms" class="align-top table-header" style="width:150px;">
               {{ quarter.label }} {{ quarter.year }}
             </th>
             <template v-else>
               <th
                 v-for="(term, i) in quarter.terms"
                 :key="i"
-                class="align-top text-secondary table-header" style="width:150px;"
+                class="align-top table-header" style="width:150px;"
               >
                 <span
                   :class="{ invisible: term !== quarter.full_term }"
@@ -32,7 +32,7 @@
       <!-- top level category -->
       <tbody>
         <tr v-for="(eventData, i) in tabulatedEventDates" :key="i">
-          <td>{{ eventData.label }}</td>
+          <td style="min-width:200px;">{{ eventData.label }}</td>
           <td
             v-for="(cell, j) in eventData.cells"
             :key="j"
@@ -186,7 +186,15 @@ h2 {
   font-weight: bold;
 }*/
 
+.table-header, .table-quarter {
+  //border-left: 1px solid #ddd;
+  //border-right: 1px solid #ddd;
+}
+
+.table { border: none; }
+
 .table-column-hover {
+  border-collapse: unset;
   background-color: #f5f5f5;
 }
 
