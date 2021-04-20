@@ -35,7 +35,7 @@ export default {
 
 h2 {
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 </style>
