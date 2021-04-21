@@ -1,6 +1,9 @@
 <template>
   <div class="blah">
-    <table class="table table-bordered table-sm">
+    
+    <p class="text-danger">Today: {{ currentQuarter }}</p>
+
+    <table class="table table-bordered">
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
@@ -39,11 +42,10 @@
           <td
             v-for="(cell, j) in eventData.cells"
             :key="j"
-            style="width: 150px"
             :colspan="cell.colspan"
             class="table-quarter"
           >
-            <span class="d-inline-block">{{ cell.label }}</span>
+            {{ cell.label }}
           </td>
         </tr>
       </tbody>
@@ -67,14 +69,14 @@
           <td id="autumn" class="table-quarter"></td>
           <td id="winter" class="table-quarter"></td>
           <td id="spring" class="table-quarter">
-            <span class="d-inline-block">Jun 12, 2021</span> - <span class="d-inline-block">Aug 8, 2021</span>
+            Jun 12, 2021 - Aug 8, 2021
           </td>
           <td id="full" class="table-quarter"></td>
           <td id="aterm" class="table-quarter"></td>
           <td i="bterm" class="table-quarter"></td>
         </tr>
       </tbody>
-      
+
     </table>
   </div>
 </template>
@@ -95,6 +97,10 @@ export default {
     };
   },
   computed: {
+    currentQuarter() {
+      let today = new Date().toLocaleDateString()
+      return today
+    },
     filteredEvents() {
       // filter events by category
       return Calendar.events.filter((f) => f.category.includes(this.category));
@@ -138,7 +144,7 @@ export default {
               // 'full_term' term has a label
               eventData.cells.push({
                 label: labelForTerm[quarter.full_term],
-                colspan: quarter.terms.length,
+                //colspan: quarter.terms.length,
               });
             } else {
               // Otherwise push a cell for each term spanning only that term
@@ -186,9 +192,11 @@ h2 {
   font-weight: bold;
 }*/
 
+/*
 .table {
-  //border: none;
+  border: none;
 }
+*/
 
 .table-event {
   //border-right: 2px solid rgb(222, 226, 230);
@@ -198,21 +206,16 @@ h2 {
 
 .table-header,
 .table-quarter {
-  width: 150px;
-  width: 150px;
+  width: 140px;
   font-size: 1.5rem;
-}
-.table-quarter {
-  color: #666;
 }
 
 .table-hover {
   background-color: #f5f5f5;
-  color: #000 !important;
+}
 
-  .table-quarter {
-    color: #000;
-  }
+.table-current {
+  background-color: lemonchiffon;
 }
 </style>
   
