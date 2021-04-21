@@ -63,7 +63,7 @@
           <td class="table-event">Event name</td>
           <td id="autumn" class="table-quarter"></td>
           <td id="winter" class="table-quarter"></td>
-          <td id="spring" class="table-quarter">2021-06-12</td>
+          <td id="spring" class="table-quarter">{{ formatDate("2021-06-12") }} </td>
           <td id="full" class="table-quarter"></td>
           <td id="aterm" class="table-quarter"></td>
           <td i="bterm" class="table-quarter"></td>
@@ -73,7 +73,7 @@
           <td id="autumn" class="table-quarter"></td>
           <td id="winter" class="table-quarter"></td>
           <td id="spring" class="table-quarter">
-            2021-06-21 - 2021-08-08
+            {{ formatDate("2021-06-21") }} - {{ formatDate("2021-08-08") }}
           </td>
           <td id="full" class="table-quarter"></td>
           <td id="aterm" class="table-quarter"></td>
@@ -106,7 +106,7 @@ export default {
       return Calendar.events.filter((f) => f.category.includes(this.category));
     },
     currentQuarter() {
-      let today = new Date().toLocaleDateString()
+      let today = this.formatDate(new Date)
       
       let eventData = Calendar.events.filter(f => f.label.includes('Instruction Begins'));
       let quarters
@@ -188,6 +188,11 @@ export default {
       }
       return fmt;
     },
+    formatDate(date) {
+      let fmtDate = ""
+      fmtDate = new Date(date).toLocaleDateString()
+      return fmtDate
+    }
   },
 };
 </script>
