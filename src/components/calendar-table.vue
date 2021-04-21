@@ -179,9 +179,10 @@ export default {
       let fmt = "";
       if (eventData.start_date) {
         fmt = eventData.start_date;
+        fmt = this.formatDate(fmt);
       }
       if (eventData.end_date) {
-        fmt += ` - ${eventData.end_date}`;
+        fmt += ` - ${this.formatDate(eventData.end_date)}`;
       }
       if (eventData.note) {
         fmt = eventData.note;
