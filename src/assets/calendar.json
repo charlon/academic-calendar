@@ -35,40 +35,40 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Sep 30, 2020",
+          "start_date": "2020-09-30",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Winter",
-          "start_date": "Jan 4, 2021",
+          "start_date": "2021-01-04",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Spring",
-          "start_date": "Mar 29, 2021",
+          "start_date": "2021-03-29",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "Full-term",
-          "start_date": "Jun 21, 2021",
+          "start_date": "2021-06-21",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "A-term",
-          "start_date": "Jun 21, 2021",
+          "start_date": "2021-06-21",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "B-term",
-          "start_date": "Jul 22, 2021",
+          "start_date": "2021-07-22",
           "end_date": "",
           "note": ""
         }
@@ -80,40 +80,40 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Dec 11, 2020",
+          "start_date": "2020-12-11",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Winter",
-          "start_date": "Mar 12, 2021",
+          "start_date": "2021-03-12",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Spring",
-          "start_date": "Jun 4, 2021",
+          "start_date": "2021-06-04",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "Full-term",
-          "start_date": "Aug 20, 2021",
+          "start_date": "2021-08-24",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "A-term",
-          "start_date": "Jul 21, 2021",
+          "start_date": "2021-07-21",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "B-term",
-          "start_date": "Aug 20, 2021",
+          "start_date": "2021-08-20",
           "end_date": "",
           "note": ""
         }
@@ -126,20 +126,20 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Dec 12, 2020",
-          "end_date": "Dec 18, 2020",
+          "start_date": "2020-12-12",
+          "end_date": "2020-12-18",
           "note": ""
         },
         {
           "quarter": "Winter",
-          "start_date": "Mar 13, 2021",
-          "end_date": "Mar 19, 2021",
+          "start_date": "2021-03-13",
+          "end_date": "2021-03-19",
           "note": ""
         },
         {
           "quarter": "Spring",
-          "start_date": "Jun 7, 2021",
-          "end_date": "Jun 11, 2021",
+          "start_date": "2021-06-07",
+          "end_date": "2021-06-11",
           "note": ""
         },
         {
@@ -173,8 +173,8 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Dec 19, 2020",
-          "end_date": "Jan 3, 2021"
+          "start_date": "2020-12-19",
+          "end_date": "2021-01-03"
         }
       ]
     },
@@ -185,8 +185,8 @@
       "quarters": [
         {
           "quarter": "Winter",
-          "start_date": "Mar 20, 2021",
-          "end_date": "Mar 28, 2021"
+          "start_date": "2021-03-20",
+          "end_date": "2021-03-28"
         }
       ]
     },
@@ -197,8 +197,8 @@
       "quarters": [
         {
           "quarter": "Spring",
-          "start_date": "Jun 12, 2021",
-          "end_date": "Jun 20, 2021"
+          "start_date": "2021-06-12",
+          "end_date": "2021-06-20"
         }
       ]
     },
@@ -210,20 +210,20 @@
         {
           "quarter": "Summer",
           "term": "Full-term",
-          "start_date": "Aug 21, 2021",
-          "end_date": "Sep 28, 2021"
+          "start_date": "2021-08-21",
+          "end_date": "2021-09-28"
         },
         {
           "quarter": "Summer",
           "term": "A-term",
-          "start_date": "Aug 21, 2021",
-          "end_date": "Sep 28, 2021"
+          "start_date": "2021-08-21",
+          "end_date": "2021-09-28"
         },
         {
           "quarter": "Summer",
           "term": "B-term",
-          "start_date": "Aug 21, 2021",
-          "end_date": "Sep 28, 2021"
+          "start_date": "2021-08-21",
+          "end_date": "2021-09-28"
         }
       ]
     },
@@ -234,7 +234,7 @@
       "quarters": [
         {
           "quarter": "Spring",
-          "start_date": "Jun 12, 2021"
+          "start_date": "2021-06-12"
         }
       ]
     },
@@ -245,7 +245,7 @@
       "quarters": [
         {
           "quarter": "Spring",
-          "start_date": "Jun 13, 2021"
+          "start_date": "2021-06-13"
         }
       ]
     },
@@ -256,7 +256,7 @@
       "quarters": [
         {
           "quarter": "Spring",
-          "start_date": "Jun 11, 2021"
+          "start_date": "2021-06-11"
         }
       ]
     },
@@ -266,7 +266,7 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Nov 11, 2020"
+          "start_date": "2020-11-11"
         }
       ]
     },
@@ -276,8 +276,8 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Nov 16, 2020",
-          "end_date": "Nov 17, 2020"
+          "start_date": "2020-11-16",
+          "end_date": "2020-11-17"
         }
       ]
     },
@@ -287,7 +287,7 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Dec 25, 2020"
+          "start_date": "2020-12-25"
         }
       ]
     },
@@ -297,7 +297,7 @@
       "quarters": [
         {
           "quarter": "Winter",
-          "start_date": "Jan 1, 2021"
+          "start_date": "2021-01-01"
         }
       ]
     },
@@ -307,7 +307,7 @@
       "quarters": [
         {
           "quarter": "Winter",
-          "start_date": "Jan 18, 2021"
+          "start_date": "2021-01-18"
         }
       ]
     },
@@ -317,7 +317,7 @@
       "quarters": [
         {
           "quarter": "Winter",
-          "start_date": "Feb 15, 2021"
+          "start_date": "2021-02-15"
         }
       ]
     },
@@ -327,7 +327,7 @@
       "quarters": [
         {
           "quarter": "Spring",
-          "start_date": "May 31, 2021"
+          "start_date": "2021-05-31"
         }
       ]
     },
@@ -338,12 +338,12 @@
         {
           "quarter": "Summer",
           "term": "Full-term",
-          "start_date": "Jul 5, 2021"
+          "start_date": "2021-07-05"
         },
         {
           "quarter": "Summer",
           "term": "A-term",
-          "start_date": "Jul 5, 2021"
+          "start_date": "2021-07-05"
         }
       ]
     },
@@ -353,40 +353,40 @@
       "quarters": [
         {
           "quarter": "Autumn",
-          "start_date": "Oct 14, 2020",
+          "start_date": "2020-10-14",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Winter",
-          "start_date": "Jan 18, 2021",
+          "start_date": "2021-01-18",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Spring",
-          "start_date": "Apr 12, 2021",
+          "start_date": "2021-04-12",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "Full-term",
-          "start_date": "Jul 5, 2021",
+          "start_date": "2021-07-05",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "A-term",
-          "start_date": "Jun 28, 2021",
+          "start_date": "2021-06-28",
           "end_date": "",
           "note": ""
         },
         {
           "quarter": "Summer",
           "term": "B-term",
-          "start_date": "Jul 28, 2021",
+          "start_date": "2021-07-28",
           "end_date": "",
           "note": ""
         }

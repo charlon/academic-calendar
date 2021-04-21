@@ -10,7 +10,10 @@
           <th class="align-top table-event"></th>
           <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th v-if="!quarter.terms" class="align-top table-header">
+            <th v-if="!quarter.terms" 
+              class="align-top table-header"
+              :class="'table-current' == currentQuarter"
+            >
               {{ quarter.label }} {{ quarter.year }}
             </th>
             <template v-else>
@@ -18,6 +21,7 @@
                 v-for="(term, i) in quarter.terms"
                 :key="i"
                 class="align-top table-header"
+                :class="'table-current' == currentQuarter"
               >
                 <span :class="{ invisible: term !== quarter.full_term }"
                   >{{ quarter.label }} {{ quarter.year }}</span
@@ -59,7 +63,7 @@
           <td class="table-event">Event name</td>
           <td id="autumn" class="table-quarter"></td>
           <td id="winter" class="table-quarter"></td>
-          <td id="spring" class="table-quarter">Jun 12, 2021</td>
+          <td id="spring" class="table-quarter">2021-06-12</td>
           <td id="full" class="table-quarter"></td>
           <td id="aterm" class="table-quarter"></td>
           <td i="bterm" class="table-quarter"></td>
@@ -69,7 +73,7 @@
           <td id="autumn" class="table-quarter"></td>
           <td id="winter" class="table-quarter"></td>
           <td id="spring" class="table-quarter">
-            Jun 12, 2021 - Aug 8, 2021
+            2021-06-21 - 2021-08-08
           </td>
           <td id="full" class="table-quarter"></td>
           <td id="aterm" class="table-quarter"></td>
@@ -97,13 +101,19 @@ export default {
     };
   },
   computed: {
-    currentQuarter() {
-      let today = new Date().toLocaleDateString()
-      return today
-    },
     filteredEvents() {
       // filter events by category
       return Calendar.events.filter((f) => f.category.includes(this.category));
+    },
+    currentQuarter() {
+      let today = new Date().toLocaleDateString()
+      
+      let eventData = Calendar.events.filter(f => f.label.includes('Instruction Begins'));
+      let quarters
+      let startDates = quarters 
+
+      // if today >= instruction begins AND <= NEXT instruction begins
+      return today
     },
     tabulatedEventDates() {
       let events = [];
