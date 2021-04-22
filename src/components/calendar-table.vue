@@ -1,7 +1,18 @@
 <template>
   <div class="blah">
-
     <table class="table table-bordered">
+      
+
+      <colgroup>
+        <col id="event">
+        <col id="autumn">
+        <col id="winter">
+        <col id="spring" class="table-current">
+        <col id="summer-full">
+        <col id="summer-a">
+        <col id="summer-b">
+      </colgroup>
+
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
       <thead>
         <tr>
@@ -11,7 +22,6 @@
             <th
               v-if="!quarter.terms"
               class="align-top table-header"
-              :class="[quarter.label === 'Spring' ? 'table-current' : '']"
             >
               {{ quarter.label }} {{ quarter.year }}
             </th>
@@ -20,7 +30,6 @@
                 v-for="(term, i) in quarter.terms"
                 :key="i"
                 class="align-top table-header"
-                :class="[quarter.label === 'Spring' ? 'table-current' : '']"
               >
                 <span :class="{ invisible: term !== quarter.full_term }"
                   >{{ quarter.label }} {{ quarter.year }}</span
@@ -49,7 +58,7 @@
             class="table-quarter"
             :class="[cell.quarter === 'Spring' ? 'table-current' : '']"
           >
-            {{ cell.label }} {{ cell.quarter }} 
+            {{ cell.label }} {{ cell.quarter }}
           </td>
         </tr>
       </tbody>
@@ -98,7 +107,7 @@ export default {
   },
   data() {
     return {
-      quarters: Calendar.quarters
+      quarters: Calendar.quarters,
     };
   },
   computed: {
@@ -180,7 +189,7 @@ export default {
       }
       return fmt;
     },
-    formatDate(date) { 
+    formatDate(date) {
       let fmtDate = "";
       // format datetime to correct format (e.g. Sep 20, 2021)
       fmtDate = new Date(date).toLocaleDateString("en-US", {
