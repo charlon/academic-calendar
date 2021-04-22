@@ -6,6 +6,9 @@
 
     <calendar-contents />
 
+    <p class="text-danger">Current Quarter (static): {{ current  }}</p>
+    <p class="text-danger">Current Quarter (dynamic): {{ currentQuarter }}</p>
+
     <!-- build a table for every category -->
     <template v-for="category in categories" v-bind:key="category.label">
       <h2 class="mt-5 font-weight-bold">{{ category.label }}</h2>
@@ -40,13 +43,30 @@ export default {
       years: Calendar.start_year + "-" + (Calendar.start_year + 1),
       categories: Calendar.categories,
 
+      current: 'Spring'
+
       // TODO: filter events by category
       //events: Calendar.events.filter()
 
     };
   },
   computed: {
+    currentQuarter() {
+      
+      // TODO: use today's date to calculate current quarter 
+      let today = new Date();
 
+      // filter event to just Instruction Begins
+      let eventData = Calendar.events.filter((f) =>
+        f.label.includes("Instruction Begins")
+      );
+
+      let quarters = eventData[0].quarters
+
+      // if today >= instruction begins AND <= NEXT instruction begins
+      return quarters;
+
+    },
   },
   components: {
     "calendar-contents": CalendarContents,
