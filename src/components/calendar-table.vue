@@ -1,6 +1,5 @@
 <template>
   <div class="blah">
-    <p class="text-danger">Today: {{ currentQuarter }}</p>
 
     <table class="table table-bordered">
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
@@ -12,7 +11,7 @@
             <th
               v-if="!quarter.terms"
               class="align-top table-header"
-              :class="'table-current' == currentQuarter"
+              :class="[quarter.label === 'Spring' ? 'table-current' : '']"
             >
               {{ quarter.label }} {{ quarter.year }}
             </th>
@@ -21,7 +20,7 @@
                 v-for="(term, i) in quarter.terms"
                 :key="i"
                 class="align-top table-header"
-                :class="'table-current' == currentQuarter"
+                :class="[quarter.label === 'Spring' ? 'table-current' : '']"
               >
                 <span :class="{ invisible: term !== quarter.full_term }"
                   >{{ quarter.label }} {{ quarter.year }}</span
@@ -48,8 +47,9 @@
             :key="j"
             :colspan="cell.colspan"
             class="table-quarter"
+            :class="[cell.quarter === 'Spring' ? 'table-current' : '']"
           >
-            {{ cell.label }}
+            {{ cell.label }} {{ cell.quarter }} 
           </td>
         </tr>
       </tbody>
@@ -98,25 +98,13 @@ export default {
   },
   data() {
     return {
-      quarters: Calendar.quarters,
+      quarters: Calendar.quarters
     };
   },
   computed: {
     filteredEvents() {
       // filter events by category
       return Calendar.events.filter((f) => f.category.includes(this.category));
-    },
-    currentQuarter() {
-      let today = this.formatDate(new Date());
-
-      let eventData = Calendar.events.filter((f) =>
-        f.label.includes("Instruction Begins")
-      );
-      let quarters;
-      let startDates = quarters;
-
-      // if today >= instruction begins AND <= NEXT instruction begins
-      return today;
     },
     tabulatedEventDates() {
       let events = [];
