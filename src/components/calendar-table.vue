@@ -2,7 +2,6 @@
   <div class="blah">
     <table class="table table-bordered">
       
-
       <colgroup>
         <col id="event">
         <col id="autumn">
@@ -237,6 +236,7 @@ h2 {
 
 .table-current {
   background-color: lemonchiffon;
+  border: 2px solid rgb(222, 226, 230);
 }
 </style>
   
