@@ -1,15 +1,14 @@
 <template>
   <div class="blah">
     <table class="table table-bordered">
-      
       <colgroup>
-        <col id="event">
-        <col id="autumn">
-        <col id="winter">
-        <col id="spring" class="table-current">
-        <col id="summer-full">
-        <col id="summer-a">
-        <col id="summer-b">
+        <col id="event" />
+        <col id="autumn" />
+        <col id="winter" />
+        <col id="spring" class="table-current" />
+        <col id="summer-full" />
+        <col id="summer-a" />
+        <col id="summer-b" />
       </colgroup>
 
       <!-- build the table header for the given calendar years i.e. 2020-2021 -->
@@ -18,10 +17,7 @@
           <th class="align-top table-event"></th>
           <!-- loop through quarters array and generate header -->
           <template v-for="quarter in quarters" v-bind:key="quarter.label">
-            <th
-              v-if="!quarter.terms"
-              class="align-top table-header"
-            >
+            <th v-if="!quarter.terms" class="align-top table-header">
               {{ quarter.label }} {{ quarter.year }}
             </th>
             <template v-else>
@@ -239,4 +235,3 @@ h2 {
   border: 2px solid rgb(222, 226, 230);
 }
 </style>
-  
