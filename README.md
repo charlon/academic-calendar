@@ -2,7 +2,7 @@
 Vue + Vite app template
 
 * Vue 3
-* Vite
+* Vite 2
 * Bootstrap 4
 
 ## Getting Started
