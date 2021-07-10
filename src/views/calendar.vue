@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "bootstrap/dist/css/bootstrap.css";
+//@import "bootstrap/dist/css/bootstrap.css";
 
 // bootrap and uw.css overrides
 /*
