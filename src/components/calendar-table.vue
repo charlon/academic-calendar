@@ -217,13 +217,11 @@ h2 {
 .table-event {
   //border-right: 2px solid rgb(222, 226, 230);
   min-width: 200px;
-  font-size: 1.6rem;
 }
 
 .table-header,
 .table-quarter {
   width: 130px;
-  font-size: 1.5rem;
 }
 
 .table-hover {
